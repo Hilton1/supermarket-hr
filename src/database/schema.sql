@@ -15,12 +15,14 @@ CREATE TABLE IF NOT EXISTS access_level(
   description VARCHAR NOT NULL
 );
 
+INSERT INTO access_level(description) VALUES('ADMIN');
 INSERT INTO access_level(description) VALUES('INVENTORY CONTROLLER');
 INSERT INTO access_level(description) VALUES('SELLER');
 
 CREATE TABLE IF NOT EXISTS employee(
   id UUID NOT NULL UNIQUE DEFAULT uuid_generate_v4() PRIMARY KEY,
-  id_access_level INT NOT NULL DEFAULT 2,
+  id_access_level INT NOT NULL DEFAULT 3,
   name VARCHAR NOT NULL,
+  cpf VARCHAR NOT NULL UNIQUE,
   FOREIGN KEY(id_access_level) REFERENCES access_level(id)
 );
