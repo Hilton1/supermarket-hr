@@ -9,6 +9,15 @@ class UsersRepository {
     return rows;
   }
 
+  async findById(id) {
+    const [row] = await db.query(`
+      SELECT * FROM users
+      WHERE id = $1
+    `, [id]);
+
+    return row;
+  }
+
   async findByCPF(cpf) {
     const [row] = await db.query(`
     SELECT * FROM users

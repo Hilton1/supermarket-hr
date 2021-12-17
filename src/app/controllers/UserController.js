@@ -9,6 +9,18 @@ class UserController {
     return response.json(users);
   }
 
+  async show(request, response) {
+    const { id } = request.params;
+
+    const user = await UsersRepository.findById(id);
+
+    if (!user) {
+      return response.status(404).json({ error: 'User not found' });
+    }
+
+    return response.json(user);
+  }
+
   async store(request, response) {
     const { name, cpf } = request.body;
 
