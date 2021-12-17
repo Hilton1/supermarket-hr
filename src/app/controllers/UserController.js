@@ -69,7 +69,7 @@ class UserController {
       return response.status(404).json({ error: 'User not found' });
     }
 
-    UsersRepository.delete(id);
+    await UsersRepository.delete(id);
 
     return response.sendStatus(204);
   }
