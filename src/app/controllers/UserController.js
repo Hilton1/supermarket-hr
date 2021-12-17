@@ -40,6 +40,25 @@ class UserController {
 
     return response.json(user);
   }
+
+  async update(request, response) {
+    const { id } = request.params;
+    const { name, id_access_level } = request.body;
+
+    const userExists = await UsersRepository.findById(id);
+
+    if (!userExists) {
+      return response.status(404).json({ error: 'User not found' });
+    }
+
+    if (!name || !id_access_level) {
+      return response.status(400).json({ error: 'Name and ID Access Level is required' });
+    }
+
+    const user = await UsersRepository.update(id, { name, id_access_level });
+
+    return response.json(user);
+  }
 }
 
 module.exports = new UserController();

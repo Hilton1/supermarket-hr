@@ -36,6 +36,19 @@ class UsersRepository {
 
     return row;
   }
+
+  async update(id, {
+    name, id_access_level,
+  }) {
+    const [row] = await db.query(`
+      UPDATE users
+      SET name = $1, id_access_level = $2
+      WHERE id = $3
+      RETURNING *
+    `, [name, id_access_level, id]);
+
+    return row;
+  }
 }
 
 module.exports = new UsersRepository();
