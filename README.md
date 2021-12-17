@@ -12,7 +12,7 @@ O **Supermarket HR** consiste em ser, literalmente, um supermercado. Nele, irá 
 - [x]  Listar um funcionário por ID
 - [x]  Cadastrar funcionários
 - [x]  Editar funcionários
-- [ ]  Excluir funcionários
+- [x]  Excluir funcionários
 
 ### Controlador de Estoque
 

@@ -49,6 +49,14 @@ class UsersRepository {
 
     return row;
   }
+
+  async delete(id) {
+    const [row] = db.query(`
+      DELETE FROM users WHERE id = $1
+    `, [id]);
+
+    return row;
+  }
 }
 
 module.exports = new UsersRepository();
