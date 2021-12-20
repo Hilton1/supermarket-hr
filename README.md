@@ -30,7 +30,7 @@ O **Supermarket HR** consiste em ser, literalmente, um supermercado. Nele, irá 
 
 ## Regras de Negócio
 
-- [ ]  Nenhum funcionário pode ter acesso a informações que são de outro nível de acesso.
+- [x]  Nenhum funcionário pode ter acesso a informações que são de outro nível de acesso.
 - [ ]  Não deve ser permitido cadastrar um funcionário com CPF já existente.
 - [ ]  Não deve ser permitido cadastrar um produto com código de barras já em uso
 - [ ]  Não deve ser possível editar um produto inexistente
