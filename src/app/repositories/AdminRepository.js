@@ -1,6 +1,6 @@
 const db = require('../../database');
 
-class UsersRepository {
+class AdminRepository {
   async findAll(orderBy = 'ASC') {
     const directon = orderBy === 'ASC' ? 'ASC' : 'DESC';
 
@@ -51,12 +51,22 @@ class UsersRepository {
   }
 
   async delete(id) {
-    const [row] = db.query(`
+    const [row] = await db.query(`
       DELETE FROM users WHERE id = $1
+    `, [id]);
+
+    return row;
+  }
+
+  async ensureAdmin(id) {
+    const [row] = await db.query(`
+      SELECT * FROM users
+      WHERE id = $1
+      AND id_access_level = 1
     `, [id]);
 
     return row;
   }
 }
 
-module.exports = new UsersRepository();
+module.exports = new AdminRepository();
