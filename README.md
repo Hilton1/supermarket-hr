@@ -14,12 +14,12 @@ O **Supermarket HR** consiste em ser, literalmente, um supermercado. Nele, irá 
 - [x]  Editar funcionários
 - [x]  Excluir funcionários
 
-### Controlador de Estoque
+### Estoquista
 
-- [ ]  Cadastrar novos produtos
-- [ ]  Visualizar produtos cadastrados
+- [x]  Cadastrar novos produtos
+- [x]  Visualizar produtos cadastrados
+- [x]  Buscar produtos por Código de barras
 - [ ]  Buscar produtos por ID
-- [ ]  Buscar produtos por Código de barras
 - [ ]  Editar produtos
 - [ ]  Excluir produtos
 
@@ -31,8 +31,8 @@ O **Supermarket HR** consiste em ser, literalmente, um supermercado. Nele, irá 
 ## Regras de Negócio
 
 - [x]  Nenhum funcionário pode ter acesso a informações que são de outro nível de acesso.
-- [ ]  Não deve ser permitido cadastrar um funcionário com CPF já existente.
-- [ ]  Não deve ser permitido cadastrar um produto com código de barras já em uso
+- [x]  Não deve ser permitido cadastrar um funcionário com CPF já existente.
+- [x]  Não deve ser permitido cadastrar um produto com código de barras já em uso
 - [ ]  Não deve ser possível editar um produto inexistente
 - [ ]  Deve ser possível modificar preço e quantidade de produtos na hora da edição.
 - [ ]  Não deve ser possível excluir um produto inexistente

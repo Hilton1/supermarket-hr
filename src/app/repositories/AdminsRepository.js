@@ -1,6 +1,6 @@
 const db = require('../../database');
 
-class AdminRepository {
+class AdminsRepository {
   async findAll(orderBy = 'ASC') {
     const directon = orderBy === 'ASC' ? 'ASC' : 'DESC';
 
@@ -69,4 +69,4 @@ class AdminRepository {
   }
 }
 
-module.exports = new AdminRepository();
+module.exports = new AdminsRepository();

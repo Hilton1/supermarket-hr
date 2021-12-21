@@ -1,9 +1,9 @@
-const AdminRepository = require('../app/repositories/AdminRepository');
+const AdminsRepository = require('../app/repositories/AdminsRepository');
 
 module.exports = function checkUserExists(request, response, next) {
   const { id } = request.params;
 
-  const user = AdminRepository.findById(id);
+  const user = AdminsRepository.findById(id);
 
   if (!user) {
     response.status(404).json({ error: 'User not found!' });

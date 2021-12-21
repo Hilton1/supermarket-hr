@@ -1,10 +1,10 @@
-const AdminRepository = require('../repositories/AdminRepository');
+const AdminsRepository = require('../repositories/AdminsRepository');
 
 class AdminController {
   async index(request, response) {
     const { orderBy } = request.query;
 
-    const users = await AdminRepository.findAll(orderBy);
+    const users = await AdminsRepository.findAll(orderBy);
 
     return response.json(users);
   }
@@ -22,13 +22,13 @@ class AdminController {
       return response.status(400).json({ error: 'Name and CPF are required!' });
     }
 
-    const userExists = await AdminRepository.findByCPF(cpf);
+    const userExists = await AdminsRepository.findByCPF(cpf);
 
     if (userExists) {
       return response.status(400).json({ error: 'CPF is already in use!' });
     }
 
-    const user = await AdminRepository.create({
+    const user = await AdminsRepository.create({
       name, cpf,
     });
 
@@ -43,7 +43,7 @@ class AdminController {
       return response.status(400).json({ error: 'Name and ID Access Level is required' });
     }
 
-    const user = await AdminRepository.update(id, { name, id_access_level });
+    const user = await AdminsRepository.update(id, { name, id_access_level });
 
     return response.json(user);
   }
@@ -51,7 +51,7 @@ class AdminController {
   async delete(request, response) {
     const { id } = request.params;
 
-    await AdminRepository.delete(id);
+    await AdminsRepository.delete(id);
 
     return response.sendStatus(204);
   }
