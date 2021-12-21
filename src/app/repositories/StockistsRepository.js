@@ -12,6 +12,15 @@ class StockistsRepository {
     return rows;
   }
 
+  async findById(id) {
+    const [row] = await db.query(`
+      SELECT * FROM products
+      WHERE id = $1
+    `, [id]);
+
+    return row;
+  }
+
   async findByBarcode(barcode) {
     const [row] = await db.query(`
       SELECT * FROM products
@@ -29,6 +38,19 @@ class StockistsRepository {
       VALUES ($1, $2, $3, $4)
       RETURNING *
     `, [barcode, name, price, quantity]);
+
+    return row;
+  }
+
+  async update(id, {
+    barcode, name, price, quantity,
+  }) {
+    const [row] = await db.query(`
+      UPDATE products
+      SET barcode = $1, name = $2, price = $3, quantity = $4
+      WHERE id = $5
+      RETURNING *
+    `, [barcode, name, price, quantity, id]);
 
     return row;
   }

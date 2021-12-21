@@ -17,5 +17,6 @@ router.delete('/users/:id', UserExists, CheckAccessLevel.ensureAdmin, AdminContr
 router.get('/products', CheckAccessLevel.ensureStockist, StockistController.index);
 router.get('/products/:barcode', CheckAccessLevel.ensureStockist, StockistController.show);
 router.post('/products', CheckAccessLevel.ensureStockist, StockistController.store);
+router.put('/products/:id', CheckAccessLevel.ensureStockist, StockistController.update);
 
 module.exports = router;

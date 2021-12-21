@@ -42,6 +42,26 @@ class StockistController {
 
     return response.json(product);
   }
+
+  async update(request, response) {
+    const { id } = request.params;
+
+    const {
+      barcode, name, price, quantity,
+    } = request.body;
+
+    const productExists = await StockistsRepository.findById(id);
+
+    if (!productExists) {
+      return response.status(404).json({ error: 'Product not found!' });
+    }
+
+    const product = await StockistsRepository.update(id, {
+      barcode, name, price, quantity,
+    });
+
+    return response.json(product);
+  }
 }
 
 module.exports = new StockistController();
