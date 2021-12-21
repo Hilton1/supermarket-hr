@@ -57,16 +57,6 @@ class AdminsRepository {
 
     return row;
   }
-
-  async ensureAdmin(id) {
-    const [row] = await db.query(`
-      SELECT * FROM users
-      WHERE id = $1
-      AND id_access_level = 1
-    `, [id]);
-
-    return row;
-  }
 }
 
 module.exports = new AdminsRepository();

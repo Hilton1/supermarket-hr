@@ -9,6 +9,18 @@ class StockistController {
     return response.json(products);
   }
 
+  async show(request, response) {
+    const { barcode } = request.params;
+
+    const product = await StockistsRepository.findByBarcode(barcode);
+
+    if (!product) {
+      return response.status(404).json({ error: 'Product not found' });
+    }
+
+    return response.json(product);
+  }
+
   async store(request, response) {
     const {
       barcode, name, price, quantity,

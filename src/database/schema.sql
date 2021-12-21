@@ -16,7 +16,7 @@ CREATE TABLE IF NOT EXISTS access_level(
 );
 
 INSERT INTO access_level(description) VALUES('ADMIN');
-INSERT INTO access_level(description) VALUES('INVENTORY CONTROLLER');
+INSERT INTO access_level(description) VALUES('STOCKIST');
 INSERT INTO access_level(description) VALUES('SELLER');
 
 CREATE TABLE IF NOT EXISTS userss(
