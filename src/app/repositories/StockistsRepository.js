@@ -54,6 +54,15 @@ class StockistsRepository {
 
     return row;
   }
+
+  async delete(id) {
+    const [row] = await db.query(`
+      DELETE FROM products
+      WHERE id = $1
+    `, [id]);
+
+    return row;
+  }
 }
 
 module.exports = new StockistsRepository();

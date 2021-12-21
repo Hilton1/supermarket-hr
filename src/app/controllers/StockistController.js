@@ -62,6 +62,20 @@ class StockistController {
 
     return response.json(product);
   }
+
+  async delete(request, response) {
+    const { id } = request.params;
+
+    const productExists = await StockistsRepository.findById(id);
+
+    if (!productExists) {
+      return response.status(404).json({ error: 'Product not found' });
+    }
+
+    await StockistsRepository.delete(id);
+
+    return response.sendStatus(204);
+  }
 }
 
 module.exports = new StockistController();

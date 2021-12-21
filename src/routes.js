@@ -18,5 +18,6 @@ router.get('/products', CheckAccessLevel.ensureStockist, StockistController.inde
 router.get('/products/:barcode', CheckAccessLevel.ensureStockist, StockistController.show);
 router.post('/products', CheckAccessLevel.ensureStockist, StockistController.store);
 router.put('/products/:id', CheckAccessLevel.ensureStockist, StockistController.update);
+router.delete('/products/:id', CheckAccessLevel.ensureStockist, StockistController.delete);
 
 module.exports = router;

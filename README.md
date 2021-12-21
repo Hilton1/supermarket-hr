@@ -21,7 +21,7 @@ O **Supermarket HR** consiste em ser, literalmente, um supermercado. Nele, irá 
 - [x]  Buscar produtos por Código de barras
 - [x]  Buscar produtos por ID
 - [x]  Editar produtos
-- [ ]  Excluir produtos
+- [x]  Excluir produtos
 
 ### Vendedor
 
@@ -35,6 +35,6 @@ O **Supermarket HR** consiste em ser, literalmente, um supermercado. Nele, irá 
 - [x]  Não deve ser permitido cadastrar um produto com código de barras já em uso
 - [x]  Não deve ser possível editar um produto inexistente
 - [x]  Não deve ser possível modificar o id dos produtos na hora da edição.
-- [ ]  Não deve ser possível excluir um produto inexistente
+- [x]  Não deve ser possível excluir um produto inexistente
 - [ ]  Não deve ser possível vender um produto por um valor inferior ao cadastrado
 - [ ]  Deve ser possível informar o troco a ser repassado para o cliente.
